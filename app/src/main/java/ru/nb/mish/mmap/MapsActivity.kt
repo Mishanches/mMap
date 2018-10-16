@@ -107,7 +107,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             toMarker = mMap.addMarker(MarkerOptions().position(tmpPoint!!).title(getString(R.string.to)))
             llButtons.visibility = View.GONE
 
-            if (fromCurrentLocation && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            if (fromCurrentLocation && ActivityCompat.checkSelfPermission(this,
+                            Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                 if (currentLocation != null) {
                     foundPoints(com.google.maps.model.LatLng(currentLocation!!.latitude, currentLocation!!.longitude),
                             com.google.maps.model.LatLng(toMarker!!.position.latitude, toMarker!!.position.longitude))
@@ -310,8 +311,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         DrawableCompat.setTint(ivWalking.getDrawable(), ContextCompat.getColor(this, R.color.buttonOff))
 
         when (travelMode) {
-            TravelMode.DRIVING -> DrawableCompat.setTint(ivDriving.getDrawable(), ContextCompat.getColor(this, R.color.buttonOn))
-            TravelMode.WALKING -> DrawableCompat.setTint(ivWalking.getDrawable(), ContextCompat.getColor(this, R.color.buttonOn))
+            TravelMode.DRIVING -> DrawableCompat.setTint(ivDriving.getDrawable(),
+                    ContextCompat.getColor(this, R.color.buttonOn))
+            TravelMode.WALKING -> DrawableCompat.setTint(ivWalking.getDrawable(),
+                    ContextCompat.getColor(this, R.color.buttonOn))
         }
     }
 }
