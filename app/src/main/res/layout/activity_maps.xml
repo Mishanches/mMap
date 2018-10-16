@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+    <fragment xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MapsActivity" />
+
+    <LinearLayout
+        android:id="@+id/llButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/layout_margin"
+        android:paddingLeft="@dimen/layout_padding_left"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ImageView
+            android:id="@+id/bFrom"
+            android:layout_width="@dimen/iv_width"
+            android:layout_height="@dimen/iv_height"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/iv_from" />
+
+        <View
+            android:layout_width="@dimen/layout_marginRight"
+            android:layout_height="@dimen/layout_height"
+            android:layout_marginLeft="@dimen/layout_marginLeft"
+            android:layout_marginTop="@dimen/layout_marginTop"
+            android:background="@color/tv_bg_distance_time" />
+
+        <ImageView
+            android:id="@+id/bTo"
+            android:layout_width="@dimen/iv_width"
+            android:layout_height="@dimen/iv_height"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/iv_to" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llRouteSelection"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/layout_margin"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/tvHowRide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="@dimen/layout_marginTop"
+            android:background="@color/tv_choice_route"
+            android:padding="@dimen/layout_marginStart"
+            android:text="@string/route"
+            android:textColor="@color/tv_distance_time"
+            android:textSize="@dimen/text_size" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginBottom="@dimen/layout_margin"
+            android:layout_marginTop="@dimen/layout_margin"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ivDriving"
+                android:layout_width="@dimen/layout_width"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onClickRoute"
+                app:srcCompat="@drawable/ic_drive_eta_black_24dp" />
+
+            <ImageView
+                android:id="@+id/ivWalking"
+                android:layout_width="@dimen/layout_width"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onClickRoute"
+                app:srcCompat="@drawable/ic_directions_walk_black_24dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ibMyLocation"
+        android:layout_width="@dimen/iv_geight_width"
+        android:layout_height="@dimen/iv_geight_width"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/iv_marginBottom"
+        android:layout_marginLeft="@dimen/iv_marginLeft"
+        android:visibility="gone"
+        app:srcCompat="@drawable/location"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/llDistanceAndClose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/layout_margin"
+        android:layout_marginHorizontal="@dimen/layout_marginTop"
+        android:layout_marginTop="@dimen/layout_margin"
+        android:background="@color/tv_bg_distance_time"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ImageView
+            android:id="@+id/ivCloseRoute"
+            android:layout_width="@dimen/iv_height"
+            android:layout_height="@dimen/iv_height"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/layout_marginStart"
+            app:srcCompat="@drawable/ic_close" />
+
+        <View
+            android:layout_width="@dimen/view_layout_width"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/layout_marginRight"
+            android:background="@color/tv_distance_time" />
+
+        <TextView
+            android:id="@+id/tvDistanceTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:padding="@dimen/layout_marginStart"
+            android:text="@string/distance_time"
+            android:textColor="@color/tv_distance_time"
+            android:textSize="@dimen/text_size_small" />
+    </LinearLayout>
+
+</FrameLayout>

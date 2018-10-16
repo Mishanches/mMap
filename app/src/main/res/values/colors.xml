@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#018f48</color>
+    <color name="colorPrimaryDark">#02783d</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="lineColor">#00c964</color>
+    <color name="buttonOn">#7c00d4</color>
+    <color name="buttonOff">#080439</color>
+    <color name="tv_bg_distance_time">#09310a</color>
+    <color name="tv_distance_time">#fafafa</color>
+    <color name="tv_choice_route">#09310a</color>
+</resources>

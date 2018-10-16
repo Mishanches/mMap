@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">M-navigator</string>
+    <string name="title_activity_maps">M-navigator</string>
+    <string name="from">Отсюда</string>
+    <string name="to">Сюда</string>
+    <string name="route_selection">Как добираемся?</string>
+
+    <string name="fail">Невозможно получить координаты. Проверьте подключение к сети</string>
+    <string name="no_marshrut">Невозможно проложить маршрут. Попробуйте задать другой маршрут</string>
+
+    <string name="route">Выбор маршрута</string>
+    <string name="no_gps_permission">Невозможно определить Ваше местоположение. Включите доступ и попробуйте позже</string>
+    <string name="distance_time">Время пути - %1$s, дистанция - %2$s</string>
+    <string name="cancel_route">Вы уверены, что хотите сбросить маршрут?</string>
+    <string name="wait_route">Идет определение Вашего местоположения для постройки маршрута...</string>
+</resources>
