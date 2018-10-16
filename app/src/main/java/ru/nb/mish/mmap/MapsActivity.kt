@@ -30,7 +30,6 @@ import com.google.maps.model.DirectionsResult
 import kotlinx.android.synthetic.main.activity_maps.*
 import com.google.maps.model.TravelMode
 
-
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
@@ -239,13 +238,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                             runOnUiThread {
                                 if (result != null && result.routes.isNotEmpty()) {
                                     llDistanceAndClose.visibility = View.VISIBLE
-                                    tvDistanceTime.setText(getString(R.string.distance_time, result.routes[0].legs[0].duration.humanReadable,
+                                    tvDistanceTime.setText(getString(R.string.distance_time,
+                                            result.routes[0].legs[0].duration.humanReadable,
                                             result.routes[0].legs[0].distance.humanReadable))
                                     llRouteSelection.visibility = View.VISIBLE
 
                                     val bounds = LatLngBounds.Builder()
 
-                                    val lineOptions = PolylineOptions().width(12f).color(ContextCompat.getColor(this@MapsActivity, R.color.lineColor))
+                                    val lineOptions = PolylineOptions().width(12f)
+                                            .color(ContextCompat.getColor(this@MapsActivity, R.color.lineColor))
                                     result.routes[0].overviewPolyline.decodePath().forEach {
                                         val mLatLng = LatLng(it.lat, it.lng)
                                         lineOptions.add(mLatLng)
